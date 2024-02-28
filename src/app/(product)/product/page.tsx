@@ -3,6 +3,7 @@ import Card from '@/component/card';
 import React from 'react';
 import useSWR from 'swr';
 import LoadingSkeleton from '@/component/loadingskeleton';
+import ErrorComponent from '@/component/error';
 
 export default function Page() {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -14,7 +15,12 @@ export default function Page() {
 
   console.log('data', data);
 
-  if (error) return <div>Error loading data...</div>;
+  if (error)
+    return (
+      <div>
+        <ErrorComponent />
+      </div>
+    );
   //if (!data) return <div>Loading...</div>;
 
   return (
