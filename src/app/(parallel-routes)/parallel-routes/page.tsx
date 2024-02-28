@@ -8,5 +8,9 @@ export const metadata: Metadata = {
 type Props = {};
 
 export default function page({}: Props) {
-  return <div>page</div>;
+  return (
+    <div>
+      <h1>Pararell-routes</h1>
+    </div>
+  );
 }
